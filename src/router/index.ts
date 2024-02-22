@@ -13,6 +13,11 @@ const router = createRouter({
       component: () => import('../views/InvestmentSimulator.vue')
     },
     {
+      path: '/immo',
+      name: 'immo',
+      component: () => import('../views/RealEstate.vue')
+    },
+    {
       path: '/404',
       component: () => import('../views/Error404.vue')
     },

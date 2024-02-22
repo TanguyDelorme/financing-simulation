@@ -7,7 +7,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <v-toolbar :elevation="5" title="Financing Simulator" color="grey">
       <nav>
         <RouterLink to="/investment">Investment simulator</RouterLink>
-        <RouterLink to="/about">Immo</RouterLink>
+        <RouterLink to="/immo">Immo</RouterLink>
       </nav>
     </v-toolbar>
   </header>
