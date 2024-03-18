@@ -11,11 +11,11 @@ const props = defineProps({
     type: Array<Number>,
     default: []
   },
-  interestCompoundData:{
+  compoundInterestData:{
     type: Array<Number>,
     default: []
   }
-})
+});
 
 const chart = ref();
 const initOptions = () => {
@@ -24,7 +24,7 @@ const initOptions = () => {
   const options = {
     title: {
       left: 'center',
-      text: 'Test'
+      text: 'Compound Interests simulation'
     },
     tooltip: {
       trigger: 'axis',
@@ -34,7 +34,7 @@ const initOptions = () => {
       }
     },
     legend: {
-      data: ['Intérêts composés', 'Traditionnal'],
+      data: ['Compound interests', 'Without compound interests'],
       right: '20',
       orient: 'vertical'
     },
@@ -50,17 +50,17 @@ const initOptions = () => {
     },
     yAxis: {
       type: 'value',
-      max: Math.ceil(Math.max(...props.interestCompoundData) / 100000) * 100000,
+      max: Math.ceil(Math.max(...props.compoundInterestData) / 100000) * 100000,
       boundaryGap: [0, '100%']
     },
     series: [
       {
-        name: 'Intérêts composés',
+        name: 'Compound interests',
         type: 'line',
-        data: props.interestCompoundData
+        data: props.compoundInterestData
       },
       {
-        name: 'Traditionnal',
+        name: 'Without compound interests',
         type: 'line',
         data: props.traditionnalData
       }
@@ -75,7 +75,7 @@ onMounted(() => {
 });
 
 onUpdated(() => {
-  if (props.years.length > 0 && props.traditionnalData.length > 0 && props.interestCompoundData.length > 0) {
+  if (props.years.length > 0 && props.traditionnalData.length > 0 && props.compoundInterestData.length > 0) {
     console.log(1)
     initOptions();
   }

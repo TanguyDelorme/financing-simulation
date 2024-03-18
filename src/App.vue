@@ -12,7 +12,9 @@ import { RouterLink, RouterView } from 'vue-router'
     </v-toolbar>
   </header>
 
-  <RouterView />
+  <div id="body">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
@@ -28,5 +30,8 @@ nav a:first-of-type {
   border: 0;
 }
 
+#body {
+  padding: 30px;
+}
 
 </style>

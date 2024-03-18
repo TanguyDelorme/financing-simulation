@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/immo',
       name: 'immo',
-      component: () => import('../views/RealEstate.vue')
+      component: () => import('../views/PurchasingCapacity.vue')
     },
     {
       path: '/404',
