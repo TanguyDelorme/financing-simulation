@@ -7,14 +7,10 @@ const props = defineProps({
     type: Array<Number>,
     default: 'Custom Message'
   },
-  traditionnalData:{
+  taxes:{
     type: Array<Number>,
     default: []
   },
-  compoundInterestData:{
-    type: Array<Number>,
-    default: []
-  }
 });
 
 const chart = ref();
@@ -24,7 +20,7 @@ const initOptions = () => {
   const options = {
     title: {
       left: 'center',
-      text: 'Compound Interests simulation'
+      text: 'Taxes over years'
     },
     tooltip: {
       trigger: 'axis',
@@ -34,7 +30,7 @@ const initOptions = () => {
       }
     },
     legend: {
-      data: ['Compound interests', 'Without compound interests'],
+      data: ['Taxes'],
       right: '20',
       orient: 'vertical'
     },
@@ -50,20 +46,15 @@ const initOptions = () => {
     },
     yAxis: {
       type: 'value',
-      max: Math.ceil(Math.max(...props.compoundInterestData) / 100000) * 100000,
+      max: Math.ceil(Math.max(...props.taxes)),
       boundaryGap: [0, '100%']
     },
     series: [
       {
-        name: 'Compound interests',
+        name: 'Taxes',
         type: 'line',
-        data: props.compoundInterestData
+        data: props.taxes
       },
-      {
-        name: 'Without compound interests',
-        type: 'line',
-        data: props.traditionnalData
-      }
     ]
   };
 
@@ -75,7 +66,7 @@ onMounted(() => {
 });
 
 onUpdated(() => {
-  if (props.years.length > 0 && props.traditionnalData.length > 0 && props.compoundInterestData.length > 0) {
+  if (props.years.length > 0 && props.taxes.length > 0) {
     initOptions();
   }
 });

@@ -18,6 +18,11 @@ const router = createRouter({
       component: () => import('../views/PurchasingCapacity.vue')
     },
     {
+      path: '/comparator',
+      name: 'comparator',
+      component: () => import('../views/Comparator.vue')
+    },
+    {
       path: '/404',
       component: () => import('../views/Error404.vue')
     },

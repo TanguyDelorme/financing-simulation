@@ -8,6 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/investment">Investment simulator</RouterLink>
         <RouterLink to="/immo">Immo</RouterLink>
+        <RouterLink to="/comparator">Comparator</RouterLink>
       </nav>
     </v-toolbar>
   </header>
